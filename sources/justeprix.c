@@ -9,18 +9,21 @@
 
 int execution(global_t *a)
 {
-    my_putstr("Veuillez séléctionner un nombre entre ");
-    my_put_nbr(a->nbr_mini); my_putstr(" et "); my_put_nbr(a->nbr_max - 1);
+    my_putstr("Choose a number into ");
+    my_put_nbr(a->nbr_mini); my_putstr(" and "); my_put_nbr(a->nbr_max - 1);
     my_putstr(" : ");
-    scanf("%d", &a->reply);
+    a->reply_char = malloc(10 * sizeof(a->reply_char));
+    scanf("%s", a->reply_char);
+    a->reply = my_strtoint(a->reply_char);
+    verification_game(a);
     if (a->reply < a->rdmvalue) {
-        if (a->now_round + 1 != a->nbr_round) my_putstr("C'est plus !\n");
+        if (a->now_round + 1 != a->nbr_round) my_putstr("It's More !\n");
     }
     if (a->reply > a->rdmvalue) {
-        if (a->now_round + 1 != a->nbr_round) my_putstr("C'est moins !\n");
+        if (a->now_round + 1 != a->nbr_round) my_putstr("It's Less\n");
     }
     if (a->reply == a->rdmvalue) {
-        my_putstr("Bravo tu as trouvé le bon nombre !\n");
+        my_putstr("Congratulations you are find the right number !\n");
         exit (0);
     }
 }

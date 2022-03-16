@@ -9,15 +9,17 @@
 
 void menu_h(void)
 {
-    my_putstr("CREATOR\n    Marc-Olivier KOBAN\n\n");
-    my_putstr("UTILIZATION\n    ");
+    my_putstr("\nCREATOR\n    Marc-Olivier KOBAN\n\n");
+    my_putstr("USE\n    ");
     my_putstr("./justeprix = 7 round, number into 0 and 100\n");
     my_putstr("    ./justeprix x y z\n");
     my_putstr("    x = number round\n");
     my_putstr("    y = number minimal\n");
     my_putstr("    z = number maximal\n\n");
     my_putstr("EXEMPLE\n");
-    my_putstr("    ./justeprix 10 50 200\n");
+    my_putstr("    ./justeprix 10 50 200\n\n");
+    my_putstr("QUIT THE GAME\n");
+    my_putstr("    Press Ctrl + c\n\n");
 }
 
 void ac_0(global_t *a)
